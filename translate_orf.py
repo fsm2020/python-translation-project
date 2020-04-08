@@ -53,8 +53,8 @@ def main():
     else:
         sequence = args.sequence
 
-# Define orf using function from find_orf.find_first_orf
-    orf = find_orf.find_first_orf(sequence = sequence,
+# Define open reading from (opn_rf) using function from find_orf.find_first_orf
+    opn_rf = find_orf.find_first_orf(sequence = sequence,
             start_codons = args.start_codons,
             stop_codons = args.stop_codons)
 
@@ -62,7 +62,7 @@ def main():
     genetic_code = {'GUC': 'V', 'ACC': 'T', 'GUA': 'V', 'GUG': 'V', 'ACU': 'T', 'AAC': 'N', 'CCU': 'P', 'UGG': 'W', 'AGC': 'S', 'AUC': 'I', 'CAU': 'H', 'AAU': 'N', 'AGU': 'S', 'GUU': 'V', 'CAC': 'H', 'ACG': 'T', 'CCG': 'P', 'CCA': 'P', 'ACA': 'T', 'CCC': 'P', 'UGU': 'C', 'GGU': 'G', 'UCU': 'S', 'GCG': 'A', 'UGC': 'C', 'CAG': 'Q', 'GAU': 'D', 'UAU': 'Y', 'CGG': 'R', 'UCG': 'S', 'AGG': 'R', 'GGG': 'G', 'UCC': 'S', 'UCA': 'S', 'UAA': '*', 'GGA': 'G', 'UAC': 'Y', 'GAC': 'D', 'UAG': '*', 'AUA': 'I', 'GCA': 'A', 'CUU': 'L', 'GGC': 'G', 'AUG': 'M', 'CUG': 'L', 'GAG': 'E', 'CUC': 'L', 'AGA': 'R', 'CUA': 'L', 'GCC': 'A', 'AAA': 'K', 'AAG': 'K', 'CAA': 'Q', 'UUU': 'F', 'CGU': 'R', 'CGC': 'R', 'CGA': 'R', 'GCU': 'A', 'GAA': 'E', 'AUU': 'I', 'UUG': 'L', 'UUA': 'L', 'UGA': '*', 'UUC': 'F'}
 
 # Translation function
-    translated_seq = translate.translate_sequence(rna_sequence = orf, genetic_code = genetic_code)
+    translated_seq = translate.translate_sequence(rna_sequence = opn_rf, genetic_code = genetic_code)
     sys.stdout.write('{}\n'.format(translated_seq))
 
 
